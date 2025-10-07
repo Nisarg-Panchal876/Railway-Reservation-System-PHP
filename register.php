@@ -1,10 +1,7 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost","root","","railway");
-if(!$conn){  
-	echo "<script type='text/javascript'>alert('Database failed');</script>";
-  	die('Could not connect: '.mysqli_connect_error());  
-}
+include_once('db_config.php');
+
 if (isset($_POST['submit']))
 {
 $fname=$_POST['fname'];

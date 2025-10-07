@@ -17,29 +17,40 @@
 *{
 	margin:0px;
 	}
-ul li
-{
-	
-	width: 130px;
-	display: inline-block;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-}
-ul li a
-{
-	color: white;
-	text-decoration: none;
-	display: block;
+/* Header: thicker bar and evenly spaced nav items */
+.dark {
+		background-color: #b35018;
+		color: white;
+		padding: 14px 0; /* make header thicker */
+		box-shadow: 0 2px 0 rgba(0,0,0,0.06);
 }
 
-ul li a:hover
-{
-	background-color: orange;
-	color:black;
+/* Navigation: use flex so all items align on one line and are evenly spaced */
+#navmenu { list-style: none; display: flex; align-items: center; justify-content: space-around; gap: 24px; padding: 0 12px; margin: 0; }
+#navmenu li { display: inline-flex; align-items: center; text-align: center; cursor: pointer; }
+#navmenu li a { color: white; text-decoration: none; padding: 8px 12px; display: inline-block; font-size: 18px; font-weight: 600; }
+#navmenu li a:hover { background-color: rgba(255,165,0,0.14); color: white; border-radius: 4px; }
+
+/* user email in nav should match link styling */
+#navmenu .user-email { color: #fff; padding: 8px 12px; font-size: 18px; font-weight: 600; }
+
+/* make sure header wrapper doesn't force wrapping */
+.wrapper { max-width: 1100px; }
+
+/* Small screens: allow wrapping and reduce spacing */
+@media (max-width: 700px) {
+	#navmenu { flex-wrap: wrap; justify-content: center; gap: 12px; }
+	#navmenu li a, #navmenu .user-email { font-size: 16px; padding: 6px 8px; }
 }
 
-ul li{
-	cursor: pointer;
-	margin-left: 65px;
+/* Logout dropdown: ensure high contrast and visibility regardless of nav hover */
+#Logout {
+	position: absolute; top: calc(100% + 6px); left: 0; background: #fff; color: #000;
+	padding: 6px 10px; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+	z-index: 3000; min-width: 140px;
 }
+#Logout a, #logoutLink { color: #c0392b !important; text-decoration: none; font-weight: 700; display: block; padding: 6px 8px; }
+#Logout a:hover, #logoutLink:hover { background: #f7f7f7; color: #922b1b !important; border-radius: 4px; }
+
+/* Prevent nav hover from affecting the logout dropdown text color */
+#Logout, #Logout * { color: inherit !important; }

@@ -2,9 +2,6 @@
 <head>
 <title>Deactivate account</title>
 <link rel="stylesheet" href="css/main.css">
-<script src="js/jquery-1.8.2.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/main.js"></script>
 <style type="text/css">
 a:link {color: #ffffff}
 a:visited {color: #ffffff}
